@@ -5,6 +5,10 @@ gem 'haml'
 gem 'sass'
 gem 'dotenv'
 gem 'boxr'
+gem 'kgio'
+gem 'memcachier'
+gem 'dalli'
+gem 'awesome_print'
 
 # dev
 gem 'shotgun'

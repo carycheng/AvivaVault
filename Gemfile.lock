@@ -2,16 +2,20 @@ GEM
   remote: https://rubygems.org/
   specs:
     addressable (2.3.7)
+    awesome_print (1.6.1)
     boxr (0.20.0)
       addressable (~> 2.3)
       hashie (~> 3.3)
       httpclient (~> 2.5)
       oj (~> 2.11)
+    dalli (2.7.4)
     dotenv (1.0.2)
     haml (4.0.6)
       tilt
     hashie (3.4.0)
     httpclient (2.6.0.1)
+    kgio (2.9.3)
+    memcachier (0.0.2)
     oj (2.11.5)
     rack (1.6.0)
     rack-protection (1.5.3)
@@ -29,9 +33,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print
   boxr
+  dalli
   dotenv
   haml
+  kgio
+  memcachier
   sass
   shotgun
   sinatra
