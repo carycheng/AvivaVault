@@ -3,6 +3,8 @@ require 'bundler'
 
 Bundler.require
 
+Dotenv.load
+
 require 'sass/plugin/rack'
 require './app'
 

@@ -1,5 +1,7 @@
-= @content
-%a{:href => '#'} Not special
+%h1
+  = @content
 
-.special
-  %a{:href => '#'} Special
+- @files.each do |f|
+  .filename
+    %h3
+      = f.name
