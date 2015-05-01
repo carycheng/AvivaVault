@@ -3,5 +3,10 @@ require 'bundler'
 
 Bundler.require
 
-require './box_sinatra_app'
-run BoxSinatraApp
+require 'sass/plugin/rack'
+require './app'
+
+Sass::Plugin.options[:style] = :compressed
+use Sass::Plugin::Rack
+
+run Sinatra::Application
