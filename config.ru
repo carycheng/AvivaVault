@@ -7,7 +7,8 @@ Dotenv.load
 
 set :cache, Dalli::Client.new(ENV["MEMCACHIER_SERVERS"],
                   {:username => ENV["MEMCACHIER_USERNAME"],
-                   :password => ENV["MEMCACHIER_PASSWORD"]})
+                   :password => ENV["MEMCACHIER_PASSWORD"],
+                   :namespace => ENV["MEMCACHIER_NAMESPACE"]})
 
 set :sessions, true
 set :session_secret, ENV['SESSION_SECRET']

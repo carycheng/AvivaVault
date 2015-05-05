@@ -1,11 +1,23 @@
 get "/" do
-  @content = settings.cache.fetch('my-key-2', 60) do
-    puts 'cache miss'
-    "hello world!"
+  #this is an example of using memcached; set to expire in 60 seconds
+  @content = settings.cache.fetch('hello-world-message', 60) do
+    "Hello World from Memcachier!"
   end
 
-  box = Boxr::Client.new
-  @files = box.root_folder_items.files
+  @files = admin_client.root_folder_items.files
 
   haml :index
+end
+
+get "/doc/:doc_id" do
+  @file = admin_client.file(params['doc_id'])
+  haml :doc
+end
+
+
+
+private
+
+def admin_client
+  Boxr::Client.new
 end

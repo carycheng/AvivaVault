@@ -4,4 +4,5 @@
 - @files.each do |f|
   .filename
     %h3
-      = f.name
+      %a{href: url("/doc/#{f.id}")}
+        = f.name
