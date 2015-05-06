@@ -32,6 +32,8 @@ build/
 .ruby-gemset
 .env
 
+/jwt/private*
+
 /.sass-cache
 /public/stylesheets/*.css
 /public/stylesheets/*.css.map
