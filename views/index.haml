@@ -1,8 +1,10 @@
 %h1
+  %i{class: 'fa fa-exclamation-circle'}
   = @content
 
-- @files.each do |f|
-  .filename
-    %h4
-      %a{href: url("/doc/#{f.id}")}
-        = f.name
+.files-listing
+  - @files.each do |f|
+    .filename
+      %h4
+        %a{href: url("/doc/#{f.id}")}
+          = f.name

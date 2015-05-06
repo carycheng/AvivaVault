@@ -1,1 +1,22 @@
-= @file.name
+.doc-details
+  .row
+    .col-md-2
+      .key
+        = "File Name:"
+    .col-md-10
+      .value
+        = @file.name
+  .row
+    .col-md-2
+      .key
+        = "Created At:"
+    .col-md-10
+      .value
+        = @file.created_at
+  .row
+    .col-md-2
+      .key
+        = "Size:"
+    .col-md-10
+      .value
+        = "#{@file["size"]/1024} KB"
