@@ -11,8 +11,17 @@ end
 
 get "/doc/:doc_id" do
   @file = admin_client.file(params['doc_id'])
-  ap @file
+
   haml :doc
+end
+
+get "/auth0/callback" do
+  ap request
+  redirect to('/')
+end
+
+get "/auth0/failure" do
+  puts "error in Auth0"
 end
 
 

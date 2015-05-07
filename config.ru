@@ -10,12 +10,20 @@ set :cache, Dalli::Client.new(ENV["MEMCACHIER_SERVERS"],
                    :password => ENV["MEMCACHIER_PASSWORD"],
                    :namespace => ENV["DEMO_APP_NAME"]})
 
-set :sessions, true
-set :session_secret, ENV['SESSION_SECRET']
-
 require 'sass/plugin/rack'
 Sass::Plugin.options[:style] = :compressed
 use Sass::Plugin::Rack
+
+use Rack::Session::Cookie
+use OmniAuth::Builder do
+  provider(
+    :auth0,
+    'VaSfetcgp9KQew7ylcvxmv0EEkJcmXcd',
+    'wFzonPSEJflKmoEN3YT1bbPADy2agtJMWAyhlFc47qFvU4r-_tFnr_DnkpG5aR8A',
+    'platform-demo-sinatra-template.auth0.com',
+    callback_path: "/auth0/callback"
+  )
+end
 
 require './app'
 run Sinatra::Application
