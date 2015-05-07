@@ -9,8 +9,12 @@
         %a{href: url("/doc/#{f.id}")}
           = f.name
 
-%a{:onclick => 'signin()', :class => "btn btn-primary btn-lg btn-login btn-block"}
-  Sign In
+.row
+  .col-md-4
+  .col-md-4
+    %a{:onclick => 'signin()', :class => "btn btn-primary btn-lg btn-login btn-block"}
+      Sign In
+  .col-md-4
 
 :javascript
   var lock = new Auth0Lock('VaSfetcgp9KQew7ylcvxmv0EEkJcmXcd', 'platform-demo-sinatra-template.auth0.com');
