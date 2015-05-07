@@ -16,7 +16,7 @@ get "/doc/:doc_id" do
 end
 
 get "/auth0/callback" do
-  ap request
+  session[:userinfo] = request.env["omniauth.auth"]
   redirect to('/')
 end
 

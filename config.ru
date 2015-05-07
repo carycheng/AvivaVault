@@ -14,7 +14,7 @@ require 'sass/plugin/rack'
 Sass::Plugin.options[:style] = :compressed
 use Sass::Plugin::Rack
 
-use Rack::Session::Cookie
+use Rack::Session::Pool, :key => ENV['SESSION_KEY']
 use OmniAuth::Builder do
   provider(
     :auth0,

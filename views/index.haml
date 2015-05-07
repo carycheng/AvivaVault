@@ -8,3 +8,20 @@
       %h4
         %a{href: url("/doc/#{f.id}")}
           = f.name
+
+%button{onclick: "signin()"}
+  Login
+
+:javascript
+  var lock = new Auth0Lock('VaSfetcgp9KQew7ylcvxmv0EEkJcmXcd', 'platform-demo-sinatra-template.auth0.com');
+  
+  
+  function signin() {
+    lock.show({
+        callbackURL: 'http://localhost:9393/auth0/callback'
+      , responseType: 'code'
+      , authParams: {
+        scope: 'openid profile'
+      }
+    });
+  }
