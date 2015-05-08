@@ -3,4 +3,5 @@
     .col-md-12
       .logout
         - if session[:userinfo]
-          Logout
+          %a{href: url("/logout")}
+            Logout

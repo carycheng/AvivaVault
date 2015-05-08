@@ -17,7 +17,10 @@ get "/doc/:doc_id" do
   haml :doc
 end
 
-
+get "/logout" do
+  session.clear
+  redirect to('/')
+end
 
 #Auth0 actions
 get "/auth0/callback" do
