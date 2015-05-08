@@ -4,7 +4,6 @@ ruby "2.2.0"
 gem 'sinatra'
 gem 'haml'
 gem 'sass'
-gem 'unicorn'
 gem 'dotenv'
 gem 'boxr', '~> 0.25'
 gem 'kgio'
