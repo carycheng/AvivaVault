@@ -15,4 +15,4 @@ gem 'omniauth-auth0', '~> 1.1'
 gem 'auth0'
 
 # dev
-gem 'shotgun'
+#gem 'shotgun'
