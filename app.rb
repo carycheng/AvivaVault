@@ -89,7 +89,7 @@ private
 
 running_dir = File.dirname(__FILE__)
 running_dir = Dir.pwd if (running_dir == '.')
-PRIVATE_KEY = OpenSSL::PKey::RSA.new File.read("#{running_dir}/#{ENV['JWT_SECRET_KEY_PATH']}"), ENV['JWT_SECRET_KEY_PASSWORD']
+PRIVATE_KEY = OpenSSL::PKey::RSA.new ENV['JWT_SECRET_KEY'], ENV['JWT_SECRET_KEY_PASSWORD']
 TOKEN_TTL = 2700 #45 minutes
 
 def setup_box_account
