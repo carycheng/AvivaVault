@@ -4,6 +4,8 @@ get "/" do
     "Hello World from Memcachier"
   end
 
+  ap session[:userinfo]
+
   @files = admin_client.root_folder_items.files
 
   haml :index
@@ -20,6 +22,7 @@ end
 #Auth0 actions
 get "/auth0/callback" do
   session[:userinfo] = request.env["omniauth.auth"]
+  ap session[:userinfo]
   redirect to('/')
 end
 
