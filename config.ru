@@ -5,6 +5,8 @@ Bundler.require
 
 Dotenv.load
 
+set :server, :puma
+
 set :cache, Dalli::Client.new(ENV["MEMCACHIER_SERVERS"],
                   {:username => ENV["MEMCACHIER_USERNAME"],
                    :password => ENV["MEMCACHIER_PASSWORD"],
