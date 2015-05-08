@@ -1,0 +1,14 @@
+%h3 Folders
+.items-listing
+.items-listing
+  - @items.folders.each do |f|
+    .item-name
+      %h4
+        = f.name
+%h3 Files
+.items-listing
+  - @items.files.each do |f|
+    .item-name
+      %h4
+        %a{href: url("/doc/#{f.id}")}
+          = f.name

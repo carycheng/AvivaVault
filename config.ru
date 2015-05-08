@@ -15,14 +15,15 @@ Sass::Plugin.options[:style] = :compressed
 use Sass::Plugin::Rack
 
 enable :sessions
+set :session_secret, ENV['SESSION_KEY']
 use Rack::Session::Pool, :key => ENV['SESSION_KEY']
 
 use OmniAuth::Builder do
   provider(
     :auth0,
-    'VaSfetcgp9KQew7ylcvxmv0EEkJcmXcd',
-    'wFzonPSEJflKmoEN3YT1bbPADy2agtJMWAyhlFc47qFvU4r-_tFnr_DnkpG5aR8A',
-    'platform-demo-sinatra-template.auth0.com',
+    ENV['AUTH0_CLIENT_ID'],
+    ENV['AUTH0_CLIENT_SECRET'],
+    ENV['AUTH0_DOMAIN'],
     callback_path: "/auth0/callback"
   )
 end

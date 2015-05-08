@@ -11,6 +11,7 @@ gem 'dalli'
 gem 'awesome_print'
 gem 'omniauth', '~> 1.2'
 gem 'omniauth-auth0', '~> 1.1'
+gem 'auth0'
 
 # dev
 gem 'shotgun'

@@ -1,17 +1,10 @@
 %h1
   %i{class: 'fa fa-exclamation-circle'}
-  = "Found #{@files.count} files in the root folder"
+  = "Found #{@files.count} file#{'s' unless @files.count==1} in the root folder"
 
 %h3
   %i{class: 'fa fa-exclamation-circle'}
   = @message
-
-/ .files-listing
-/   - @files.each do |f|
-/     .filename
-/       %h4
-/         %a{href: url("/doc/#{f.id}")}
-/           = f.name
 
 - unless session[:userinfo]
   .signin-button
