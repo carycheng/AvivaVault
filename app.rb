@@ -1,10 +1,8 @@
 get "/" do
   #this is an example of using memcached; set to expire in 60 seconds
-  @content = settings.cache.fetch('hello-world-message', 60) do
-    "Hello World from Memcachier"
+  @message = settings.cache.fetch('memcachier-message', 60) do
+    "Memcachier connection is live"
   end
-
-  ap session[:userinfo]
 
   @files = admin_client.root_folder_items.files
 
@@ -25,7 +23,6 @@ end
 #Auth0 actions
 get "/auth0/callback" do
   session[:userinfo] = request.env["omniauth.auth"]
-  ap session[:userinfo]
   redirect to('/')
 end
 

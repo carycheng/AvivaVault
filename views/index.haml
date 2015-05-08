@@ -1,20 +1,26 @@
 %h1
   %i{class: 'fa fa-exclamation-circle'}
-  = @content
+  = "Found #{@files.count} files in the root folder"
 
-.files-listing
-  - @files.each do |f|
-    .filename
-      %h4
-        %a{href: url("/doc/#{f.id}")}
-          = f.name
+%h3
+  %i{class: 'fa fa-exclamation-circle'}
+  = @message
 
-.row
-  .col-md-4
-  .col-md-4
-    %a{:onclick => 'signin()', :class => "btn btn-primary btn-lg btn-login btn-block"}
-      Sign In
-  .col-md-4
+/ .files-listing
+/   - @files.each do |f|
+/     .filename
+/       %h4
+/         %a{href: url("/doc/#{f.id}")}
+/           = f.name
+
+- unless session[:userinfo]
+  .signin-button
+    .row
+      .col-md-4
+      .col-md-4
+        %a{:onclick => 'signin()', :class => "btn btn-primary btn-lg btn-login btn-block"}
+          Sign In
+      .col-md-4
 
 :javascript
   var lock = new Auth0Lock('VaSfetcgp9KQew7ylcvxmv0EEkJcmXcd', 'platform-demo-sinatra-template.auth0.com');
