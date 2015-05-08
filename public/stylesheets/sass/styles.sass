@@ -1,8 +1,31 @@
 //this is an example of setting a variable
-$filename_color: #2897a0
+$box_blue: #3278cf
 
 body
   font-family: 'Open Sans', sans-serif
+  background-color: #f9f9f9
+
+.navbar-inverse
+  background-color: $box_blue
+  border-color: $box_blue
+  border-radius: 0px
+  .navbar-brand
+    color: white
+
+.footer
+  height: 50px
+  text-align: right
+  font-size: 120%
+  color: #DDD
+  .navbar
+    background-color: #333
+    .logout
+      margin-top: 12px
+      color: white
+
+.btn-primary
+  background-color: $box_blue
+  border-color: $box_blue
 
 h1
   font-weight: 300
@@ -12,7 +35,6 @@ h1
   .filename
     h4
       a
-        color: $filename_color
         font-weight: 100
 
 .doc-details

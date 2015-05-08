@@ -1,9 +1,13 @@
 !!!
 %html
   %head
+    %meta(charset="utf-8")
+    %meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    
     %title
       = ENV['DEMO_APP_NAME']
-    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
+
     %link{:rel => 'stylesheet', :type => 'text/css', :href => '//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'}
     %link{:rel => 'stylesheet', :type => 'text/css', :href => '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css'}
     %link{:rel => 'stylesheet', :type => 'text/css', :href => '//fonts.googleapis.com/css?family=Open+Sans:100,200,400,300,600'}
@@ -12,6 +16,7 @@
     %script{:src => '//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js'}
     %script{:src => '//cdn.auth0.com/js/lock-7.1.min.js'}
   %body
+    = haml :header
     .container
-      = haml :header
       = yield
+    = haml :footer
