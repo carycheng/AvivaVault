@@ -26,7 +26,8 @@ get "/logout" do
   begin
     auth0_client.delete_user(session[:userinfo]['uid'])
     admin_client.delete_user(session[:box_id], notify: false, force: true)
-  rescue
+  rescue => ex
+    puts ex.message
   end
 
   session.clear
