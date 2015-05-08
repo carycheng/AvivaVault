@@ -19,7 +19,7 @@ get "/doc/:doc_id" do
   requires_login
 
   @file = user_client.file(params['doc_id'])
-  haml :doc
+  haml :doc_details
 end
 
 get "/logout" do
