@@ -3,8 +3,9 @@
     .navbar-header
       %a.navbar-brand{href: "/"}
         = ENV['DEMO_APP_NAME']
-
-/ .navbar.navbar-default{role: 'navigation'}
-/   .navbar-header
-/     %a.navbar-brand{href: "/"}
-/       = ENV['DEMO_APP_NAME']
+    - if session[:userinfo]
+      .username
+        %span
+          %img{:src => session[:userinfo][:info][:image], :width => '30px', :class => 'img-circle'}
+        %span
+          = "#{session[:userinfo][:info][:name]}"
