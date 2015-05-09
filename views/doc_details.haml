@@ -1,22 +1,27 @@
 .doc-details
   .row
-    .col-md-2
-      .key
-        = "File Name:"
-    .col-md-10
-      .value
-        = @file.name
-  .row
-    .col-md-2
-      .key
-        = "Created At:"
-    .col-md-10
-      .value
-        = @file.created_at
-  .row
-    .col-md-2
-      .key
-        = "Size:"
-    .col-md-10
-      .value
-        = "#{@file["size"]/1024} KB"
+    .col-md-1
+      %img{:src => url("/thumbnail/#{@file.id}"), :width => '55px'}
+    .col-md-11(style="margin-left: -80px;")
+      .row
+        .col-md-2
+          .key
+            = "File Name:"
+        .col-md-10
+          .value
+            = @file.name
+      .row
+        .col-md-2
+          .key
+            = "Created At:"
+        .col-md-10
+          .value
+            = @file.created_at
+      .row
+        .col-md-2
+          .key
+            = "Size:"
+        .col-md-10
+          .value
+            = "#{@file["size"]/1024} KB"
+  

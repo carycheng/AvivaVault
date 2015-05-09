@@ -15,11 +15,16 @@ get "/dashboard" do
   haml :dashboard
 end
 
-get "/doc/:doc_id" do
+get "/doc/:id" do
   requires_login
 
-  @file = user_client.file(params['doc_id'])
+  @file = user_client.file(params[:id])
   haml :doc_details
+end
+
+get "/thumbnail/:id" do
+  image = user_client.thumbnail(params[:id], min_height: 256, min_width: 256)
+  response.write(image)
 end
 
 get "/logout" do
