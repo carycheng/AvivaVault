@@ -1,7 +1,7 @@
 .doc-details
   .row
     .col-md-1
-      %img{:src => url("/thumbnail/#{@file.id}"), :width => '55px'}
+      %img{:src => url("/thumbnail/#{@file.id}"), :width => '72px'}
     .col-md-11(style="margin-left: -80px;")
       .row
         .col-md-2
@@ -24,4 +24,9 @@
         .col-md-10
           .value
             = "#{@file["size"]/1024} KB"
+      .row
+        .col-md-2
+        .col-md-10
+          %a{:href => "/download/#{@file.id}"}
+            Download
   

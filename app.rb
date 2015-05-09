@@ -22,6 +22,11 @@ get "/doc/:id" do
   haml :doc_details
 end
 
+get "/download/:id" do
+  url = user_client.download_url(params[:id])
+  redirect to url
+end
+
 get "/thumbnail/:id" do
   image = user_client.thumbnail(params[:id], min_height: 256, min_width: 256)
   response.write(image)
@@ -36,7 +41,7 @@ get "/logout" do
   end
 
   session.clear
-  redirect to('/')
+  redirect to '/'
 end
 
 get "/auth0/callback" do
@@ -61,7 +66,7 @@ get "/auth0/callback" do
     puts "created new box user and set box_id in auth0 metadata"
   end
 
-  redirect to('/dashboard')
+  redirect to '/dashboard'
 end
 
 get "/auth0/failure" do
