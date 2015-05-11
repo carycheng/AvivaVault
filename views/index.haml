@@ -6,6 +6,9 @@
   %i{class: 'fa fa-exclamation-circle'}
   = @message
 
+.alert.alert-success{:role=>'alert'}
+  a new div
+
 - unless session[:userinfo]
   .signin-button
     .row
