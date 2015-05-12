@@ -1,32 +1,69 @@
-.doc-details
-  .row
-    .col-md-1
-      %img{:src => url("/thumbnail/#{@file.id}"), :width => '72px'}
-    .col-md-11(style="margin-left: -80px;")
-      .row
-        .col-md-2
-          .key
-            = "File Name:"
-        .col-md-10
-          .value
-            = @file.name
-      .row
-        .col-md-2
-          .key
-            = "Created At:"
-        .col-md-10
-          .value
-            = @file.created_at
-      .row
-        .col-md-2
-          .key
-            = "Size:"
-        .col-md-10
-          .value
-            = "#{@file["size"]/1024} KB"
-      .row
-        .col-md-2
-        .col-md-10
-          %a{:href => "/download/#{@file.id}"}
-            Download
-  
+%html
+  %head
+    %title My Aviva Vault
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "content-type"}/
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "", :name => "keywords"}/
+    /[if lte IE 8] <script src="css/ie/html5shiv.js"></script>
+    %script{:src => "../../js/jquery.min.js"}
+    %script{:src => "../../js/jquery.dropotron.min.js"}
+    %script{:src => "../../js/skel.min.js"}
+    %script{:src => "../../js/skel-layers.min.js"}
+    %script{:src => "../../js/init.js"}
+    / <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    / Bootstrap
+    %link{:href => "/vendor/bootstrap/css/bootstrap.min.css", :rel => "stylesheet"}
+      /
+        <link href="/css/bootstrap.css" rel="stylsheet">
+        <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+      %noscript
+        %link{:href => "/css/bootstrap.css", :rel => "stylsheet"}
+          %link{:href => "/css/bootstrap-responsive.css", :rel => "stylesheet"}
+            %link{:href => "../../css/skel.css", :rel => "stylesheet"}/
+            %link{:href => "../../css/style.css", :rel => "stylesheet"}/
+            /
+              <link rel="stylesheet" href="../../css/bootstrap.min.css" />
+      /[if lte IE 8] <link rel="stylesheet" href="css/ie/v8.css" />
+  %body.landingPageBack
+    .navbar.bodyColor.color
+      .container
+        .navbar-header
+          %img{:alt => "", :src => "http://i72.photobucket.com/albums/i162/carycheng77/logo-Aviva_zps3inbti6j.png"}/
+    / /.NAVBAR END
+    / Caroursel Area
+    %section#home.text-center.landingPageBack
+      .item.active
+        .carousel-inner
+        %div
+        .doc-details
+          .row
+            .col-md-1
+              %img{:src => url("/thumbnail/#{@file.id}"), :width => '72px'}
+            .col-md-11(style="margin-left: -80px;")
+              .row
+                .col-md-2
+                  .key
+                    = "File Name:"
+                .col-md-10
+                  .value
+                    = @file.name
+              .row
+                .col-md-2
+                  .key
+                    = "Created At:"
+                .col-md-10
+                  .value
+                    = @file.created_at
+              .row
+                .col-md-2
+                  .key
+                    = "Size:"
+                .col-md-10
+                  .value
+                    = "#{@file["size"]/1024} KB"
+              .row
+                .col-md-2
+                .col-md-10
+                  %a{:href => "/download/#{@file.id}"}
+                    Download
+

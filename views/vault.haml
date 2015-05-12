@@ -1,16 +1,61 @@
-%h2
-  Your Dashboard
-%hr
-%h3 Folders
-.items-listing
-  - @items.folders.each do |f|
-    .item-name
-      %h4
-        = f.name
-%h3 Files
-.items-listing
-  - @items.files.each do |f|
-    .item-name
-      %h4
-        %a{href: url("/doc/#{f.id}")}
-          = f.name
+%html
+  %head
+    %title My Aviva Vault
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "content-type"}/
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "", :name => "keywords"}/
+    /[if lte IE 8] <script src="css/ie/html5shiv.js"></script>
+    %script{:src => "../../js/jquery.min.js"}
+    %script{:src => "../../js/jquery.dropotron.min.js"}
+    %script{:src => "../../js/skel.min.js"}
+    %script{:src => "../../js/skel-layers.min.js"}
+    %script{:src => "../../js/init.js"}
+    / <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    / Bootstrap
+    %link{:href => "/vendor/bootstrap/css/bootstrap.min.css", :rel => "stylesheet"}
+      /
+        <link href="/css/bootstrap.css" rel="stylsheet">
+        <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+      %noscript
+        %link{:href => "/css/bootstrap.css", :rel => "stylsheet"}
+          %link{:href => "/css/bootstrap-responsive.css", :rel => "stylesheet"}
+            %link{:href => "../../css/skel.css", :rel => "stylesheet"}/
+            %link{:href => "../../css/style.css", :rel => "stylesheet"}/
+            /
+              <link rel="stylesheet" href="../../css/bootstrap.min.css" />
+      /[if lte IE 8] <link rel="stylesheet" href="css/ie/v8.css" />
+  %body.landingPageBack
+    .navbar.bodyColor.color
+      .container
+        .navbar-header
+          %img{:alt => "", :src => "http://i72.photobucket.com/albums/i162/carycheng77/logo-Aviva_zps3inbti6j.png"}/
+    / /.NAVBAR END
+    / Caroursel Area
+    %section#home.text-center.landingPageBack
+      .item.active
+        .carousel-inner
+          %img{:alt => "", :src => "http://i72.photobucket.com/albums/i162/carycheng77/Screen%20Shot%202015-05-08%20at%204.10.31%20PM_zps2ewpubob.png"}/
+        %div
+          .iconPadding
+            %h2
+              Your Dashboard
+            %hr
+            %h3 Folders
+            .items-listing
+              - @items.folders.each do |f|
+                .item-name
+                  %h4
+                    = f.name
+            %h3 Files
+            .items-listing
+              - @items.files.each do |f|
+                .item-name
+                  %h4
+                    %a{href: url("/doc/#{f.id}")}
+                      = f.name
+                %div
+                  %form.navbar-form.navbar-left.searchPadding{:role => "search"}
+                    .form-group
+                      %input.form-control{:placeholder => "Search your vault", :type => "text"}
+                    %button.btn.btn-default.searchColor{:type => "submit"} Search
+
