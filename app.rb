@@ -18,6 +18,11 @@ end
 get '/important' do
   haml :portal
 end 
+
+get '/personal' do
+  @items = user_client.root_folder_items
+  haml :vault
+end 
  
 get "/doc/:id" do
   requires_login
