@@ -113,8 +113,9 @@ TOKEN_TTL = 2700 #45 minutes
 
 def setup_box_account
   #this is where you would set up the new app user's initial files, folders, permissions, etc.
-  user_client.create_folder("Test Folder", Boxr::ROOT)
-  user_client.upload_file("test.txt", Boxr::ROOT)
+  user_client.create_folder("Aviva Home Insurance", Boxr::ROOT)
+  user_client.upload_file("AvivaHomeInsurancePolicy.pdf", Boxr::ROOT)
+  user_client.create_folder("Home Policy", Boxr::ROOT)
 end
 
 def requires_login
