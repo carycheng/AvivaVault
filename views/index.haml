@@ -1,22 +1,32 @@
-%h1
-  %i{class: 'fa fa-exclamation-circle'}
-  = "Found #{@files.count} file#{'s' unless @files.count==1} in the root folder"
+/ %h1
+/   %i{class: 'fa fa-exclamation-circle'}
+/   = "Found #{@files.count} file#{'s' unless @files.count==1} in the root folder"
 
-%h3
-  %i{class: 'fa fa-exclamation-circle'}
-  = @message
+/ %h3
+/   %i{class: 'fa fa-exclamation-circle'}
+/   = @message
 
-.alert.alert-success{:role=>'alert'}
-  a new div
+%body.background.bodyColor.indexColor
+  #img_container.indexColor
+    %img.borderClass{:height => "100%", :src => "http://i72.photobucket.com/albums/i162/carycheng77/banner.jpg_zpsvlldrpoj.png", :width => "100%"}
+    .button-Shift.buttonPosition
+      %form{:action => "/test", :method => "get"}
+        %a{:onclick => 'signin()', :class => "btn btn-primary btn-lg button signIn"}
+          SIGN IN
+  :javascript
+      / jQuery (necessary for Bootstrap's JavaScript plugins)
+  %script{:src => "/vendor/jquery-1.9.1.min.js"}
+  / Include all compiled plugins (below), or include individual files as needed
+  %script{:src => "/vendor/bootstrap/js/bootstrap.min.js"}
 
-- unless session[:userinfo]
-  .signin-button
-    .row
-      .col-md-4
-      .col-md-4
-        %a{:onclick => 'signin()', :class => "btn btn-primary btn-lg btn-login btn-block"}
-          Sign In
-      .col-md-4
+/ - unless session[:userinfo]
+/   .signin-button
+/     .row.signInPadding
+/       .col-md-4
+/       .col-md-4
+/         %a{:onclick => 'signin()', :class => "btn btn-primary btn-lg button signIn"}
+/           Sign In
+/       .col-md-4
 
 :javascript
   var lock = new Auth0Lock('VaSfetcgp9KQew7ylcvxmv0EEkJcmXcd', 'platform-demo-sinatra-template.auth0.com');
