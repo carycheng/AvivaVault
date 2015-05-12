@@ -15,6 +15,10 @@ get "/dashboard" do
   haml :dashboard
 end
 
+get '/important' do
+  haml :portal
+end 
+ 
 get "/doc/:id" do
   requires_login
 

@@ -8,10 +8,10 @@
 
 %body.background.bodyColor.indexColor
   #img_container.indexColor
-    %img.borderClass{:height => "100%", :src => "http://i72.photobucket.com/albums/i162/carycheng77/banner.jpg_zpsvlldrpoj.png", :width => "100%"}
+    %img.borderClass{:height => "100%", :src => "http://i72.photobucket.com/albums/i162/carycheng77/banner.jpg_zpsvlldrpoj.png", :width => "100%", :class => 'landingShift'}
     .button-Shift.buttonPosition
       %form{:action => "/test", :method => "get"}
-        %a{:onclick => 'signin()', :class => "btn btn-primary btn-lg button signIn"}
+        %a{:onclick => 'signin()', :class => "btn btn-primary btn-lg button signIn logInPadding"}
           SIGN IN
   :javascript
       / jQuery (necessary for Bootstrap's JavaScript plugins)
